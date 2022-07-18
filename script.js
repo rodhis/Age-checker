@@ -11,34 +11,43 @@ function verificar() {
         var genero = ''
         var img = document.createElement('img')
         img.setAttribute('id', 'foto')
-
         if (fsex[0].checked) {
             genero = 'homem'
-            if (idade >=0 && idade <= 10) {
-                img.setAttribute('src', 'bebe-homem.png')
-
-            } else if (idade < 21) {
-                img.setAttribute('src', 'jovem-homem.png')
-
-            } else if (idade < 60) {
-                img.setAttribute('src', 'adulto-homem.png')
-
-            } else {
-                img.setAttribute('src', 'idoso-homem.png')
+            switch (true) {
+                case (idade >= 0 && idade) <= 10:
+                    //Bebê e Criança
+                    console.log(idade)
+                    img.setAttribute('src', 'bebe-homem.png')
+                    break
+                case idade < 21:
+                    //Jovem
+                    img.setAttribute('src', 'jovem-homem.png')
+                    break
+                case idade < 60:
+                    //Adulto
+                    img.setAttribute('src', 'adulto-homem.png')
+                    break
+                default:
+                    //idoso
+                    img.setAttribute('src', 'idoso-homem.png')
             }
-
         } else if (fsex[1].checked) {
             genero = 'mulher'
-            if (idade >=0 && idade <= 10) {
-                img.setAttribute('src', 'bebe-mulher.png')
-
-            } else if (idade < 21) {
-                img.setAttribute('src', 'jovem-mulher.png')
-
-            } else if (idade < 60) {
-                img.setAttribute('src', 'adulto-mulher.png')
-
-            } else {
+            switch (true) {
+                case (idade >=0 && idade <= 10):
+                    //Bebê e Criança
+                    img.setAttribute('src', 'bebe-mulher.png')
+                    break
+                case idade < 21:
+                    //Jovem
+                    img.setAttribute('src', 'jovem-mulher.png')
+                    break
+                case idade < 60:
+                    //Adulto
+                    img.setAttribute('src', 'adulto-mulher.png')
+                    break
+                default:
+                //idoso
                 img.setAttribute('src', 'idoso-mulher.png')
            
         }
